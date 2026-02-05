@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+    <link rel="shortcut icon" href="./fav/android-chrome-512x512.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="dom_enhanced (1).css">
+</head>
+
+<body>
+    <div id="main">
+        <nav>
+            <div class="nav-in">
+                <h2>Personalised DashBoard</h2>
+                <div class="theme">
+                    <h4>Change theme</h4>
+                </div>
+            </div>
+        </nav>
+        <section class="allElems">
+            <header>
+                <div class="header1">
+                    <h2>20 April 2025</h2>
+                    <h1>Saturday, 1:00 pm</h1>
+                    <h4>Delhi(India)</h4>
+                </div>
+
+                <div class="header2">
+                    <h2>20°C</h2>
+                    <h4>Light rain</h4>
+                    <h3 class="precipitation">Precipitation: 35%</h3>
+                    <h3 class="humidity">Humidity: 49%</h3>
+                    <h3 class="wind">Wind: 10 km/h</h3>
+
+                </div>
+            </header>
+            <div class="allFeatures">
+                <div class="todo elem" id="0">
+                    <img src="https://imgs.search.brave.com/Tvs46WGBG47_jmunfxGELhauw4-9WogIIBWcpHst-EY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzdhLzQ1/L2U1LzdhNDVlNTBm/Zjc1N2E2ZjIxM2E4/NzU0ZTdjNmM4ZGU2/LmpwZw"
+                        alt="">
+                    <h2>To Do List</h2>
+                </div>
+                <div class="daily elem" id="1">
+                    <img src="https://imgs.search.brave.com/xIIz3QAKI_582C4EICxxVxh8cZ3doWDl8HjqHmWZqpc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM1/NjgxMDA4Ny9waG90/by9ldmVudC1wbGFu/bmVycy11c2UtdGlt/ZXRhYmxlcy1hbmQt/YWdlbmRhcy10by1h/cnJhbmdlLWFuZC1z/Y2hlZHVsZS1ldmVu/dHMtb24tdGhlLW9m/ZmljZS10YWJsZS5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/NTFza3dDN1ItT3p6/cElHanFkRlg0Ykct/YjZ0eXdxSjJnRHA1/WU9xVWZiTT0"
+                        alt="">
+                    <h2>Daily Planner</h2>
+                </div>
+                <div class="moti elem" id="2">
+                    <img src="https://imgs.search.brave.com/_Cdkg5SWkfheABtDSK1K6cU1j6iYrxC66OTkY0eAwR0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzUyLzE3LzA2/LzM2MF9GXzE1MjE3/MDYyN19uRDF2VjRW/ektVUm84TzlrVTNY/ZE5kdlQ2cUE0YXNj/RS5qcGc"
+                        alt="">
+                    <h2>Motivation</h2>
+                </div>
+                <div class="pomo elem" id="3">
+                    <img src="https://imgs.search.brave.com/d-uucZtdXaUKeLDFjX2uaBOeRQx2VMqeC8LuVZOSvj4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9wb21v/ZG9yby10ZWNobmlx/dWUtdGltZXItY2xv/c2UtdXAtZGFyay1i/bHVlLWJhY2tncm91/bmQtbW9kZXJuLXdv/cmtmbG93LWZvY3Vz/ZWQtaGFuZC1hZGp1/c3RzLWdsb3dpbmct/ZW1ib2R5aW5nLTM3/NDIxMDgwNC5qcGc"
+                        alt="">
+                    <h2>Pomodoro Timer</h2>
+                </div>
+                <div class="goals elem" id="4">
+                    <img src="https://images.unsplash.com/photo-1718202248232-0cdbc15d29b2?q=80&w=3928&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <h2>Daily Goals</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="fullElem todo-list-fullpage">
+            <button class="back" id="0">Close</button>
+            <h2>Your Personalised Task List</h2>
+            <div class="todo-container">
+                <div class="addTask">
+                    <form>
+                        <input id="task-input" type="text" placeholder="Enter Task">
+                        <textarea placeholder="Enter Details" name="" id="" cols="30" rows="10"></textarea>
+                        <div class="mark-imp">
+                            <input type="checkbox" name="" id="check">
+                            <label for="check">Mark as Important!</label>
+                        </div>
+                        <button>Add Task</button>
+                    </form>
+                </div>
+                <div class="allTask">
+                    
+
+
+
+                </div>
+            </div>
+        </section>
+        <section class="fullElem daily-planner-fullpage">
+            <button class="back" id="1">Close</button>
+            <h2>Plan your Day to be more Productive</h2>
+
+            <div class="day-planner">
+
+
+
+            </div>
+
+        </section>
+        <section class="fullElem motivational-fullpage">
+            <button class="back" id="2">Close</button>
+            <div class="motivation-fullPage-container">
+                <div class="motivation-container">
+                    <div class="motivation-wrapper">
+                        <img src="./icons8-quote-100.png" alt="">
+                        <div class="motivation-1">
+                            <h2>Quote of the Day</h2>
+                        </div>
+                        <div class="motivation-2">
+                            <h1>ghjhgjikjhbghjijh</h1>
+                        </div>
+                        <div class="motivation-3">
+    <button id="new-quote-btn" style="padding: 10px 20px; cursor: pointer; border-radius: 10px; border: none; background: var(--tri2); font-weight: bold; margin-right: 15px;">
+        Get New Quote
+    </button>
+    <h2></h2>
+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="fullElem pomodoro-fullpage">
+            <button class="back" id="3">Close</button>
+            <h2>Study with me!</h2>
+
+            <h4 class="session">Work Session</h4>
+            <div class="pomo-timer">
+                <h1>25:00</h1>
+                <button class="start-timer">Start</button>
+                <button class="pause-timer">Pause</button>
+                <button class="reset-timer">Reset</button>
+            </div>
+        </section>
+    <section class="fullElem daily-goals-fullpage">
+        <!-- CLOSE BUTTON (required for openFeatures) -->
+        <button class="back" id="4">Close</button>
+    
+        <div class="page goals-page" id="4">
+            <h2>Set Your Goals</h2>
+    
+            <!-- ADD GOALS -->
+            <div class="goals-container">
+                <h3>Add your goals</h3>
+    
+                <!-- textarea NEEDS an id -->
+                <textarea id="goal-input" placeholder="Enter your goal"></textarea>
+    
+                <!-- button NEEDS an id -->
+                <button id="add-goal-btn">ADD</button>
+            </div>
+    
+            <!-- GOALS LIST -->
+            <div class="goals-list">
+                <h2>My Goals</h2>
+    
+                <!-- JS will inject goals here -->
+                <div class="goals-items"></div>
+            </div>
+        </div>
+    </section>
+      </div>
+        
+            <button class="back">Close</button>
+        </div>
+    </section>
+
+
+
+    </div>
+    <script src="dom.js"></script>
+</body>
+
+</html>

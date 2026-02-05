@@ -1,0 +1,1820 @@
+:root {
+    /* Professional Executive Palette */
+    --pri: #ffffff;
+    /* Clean White */
+    --sec: lightseagreen;
+    /* Deep Slate/Navy (Primary Background) */
+    --tri1: #2563eb;
+    /* Focused Action Blue (Primary Button) */
+    --tri2: #1e293b;
+    /* Secondary Container Grey */
+
+    /* Semantic Status Colors */
+    --red: #ef4444;
+    /* Alert/Important */
+    --green: #10b981;
+    /* Success/Complete */
+    --blue: #3b82f6;
+    /* Information */
+    --black: #020617;
+    /* Deep Black */
+    
+    /* NEW: Enhanced Color Palette */
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --gradient-warm: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    --gradient-cool: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.25);
+    --glow-primary: 0 0 20px rgba(99, 102, 241, 0.5);
+    --glow-secondary: 0 0 20px rgba(236, 72, 153, 0.5);
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 200;
+    src: url(./AeonikTRIAL-Light.otf);
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 500;
+    src: url(./AeonikTRIAL-Regular.otf);
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 700;
+    src: url(./AeonikTRIAL-Bold.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: aeonik;
+    color: var(--pri);
+    /* Adding a subtle letter spacing for corporate readability */
+    letter-spacing: -0.01em;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /* NEW: Smooth scrolling */
+    scroll-behavior: smooth;
+}
+
+/* NEW: Custom Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--tri1), var(--tri2));
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--blue), var(--tri1));
+    background-clip: padding-box;
+}
+
+/* NEW: Selection Styling */
+::selection {
+    background: var(--tri1);
+    color: var(--pri);
+    text-shadow: none;
+}
+
+::-moz-selection {
+    background: var(--tri1);
+    color: var(--pri);
+    text-shadow: none;
+}
+
+#main {
+    height: 100%;
+    width: 100%;
+    padding-top: 80px;
+    /* Slightly tighter top padding */
+    background-color: var(--sec);
+    /* NEW: Animated background pattern */
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+    background-size: 100% 100%;
+    animation: backgroundShift 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+/* NEW: Background Animation */
+@keyframes backgroundShift {
+    0%, 100% {
+        background-position: 0% 0%, 100% 100%, 50% 0%;
+    }
+    50% {
+        background-position: 100% 100%, 0% 0%, 0% 100%;
+    }
+}
+
+/* NEW: Decorative Background Elements */
+#main::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15), transparent 70%);
+    border-radius: 50%;
+    top: -250px;
+    right: -250px;
+    animation: float 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#main::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.1), transparent 70%);
+    border-radius: 50%;
+    bottom: -200px;
+    left: -200px;
+    animation: float 15s ease-in-out infinite reverse;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+section.allElems {
+    height: 100%;
+    width: 100%;
+    padding: 40px;
+    overflow: auto;
+    position: absolute;
+    z-index: 1;
+}
+
+.allElems header {
+    width: 100%;
+    /* Updated to a more abstract, professional architectural background */
+    background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.8)),
+        url(https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop);
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    /* Sharper corners for a formal look */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 40px 60px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* NEW: Enhanced header styling */
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-xl),
+                0 0 60px rgba(99, 102, 241, 0.1) inset;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* NEW: Header hover effect */
+.allElems header:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl),
+                0 0 80px rgba(99, 102, 241, 0.15) inset,
+                0 0 100px rgba(236, 72, 153, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* NEW: Animated gradient border */
+.allElems header::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, 
+        rgba(99, 102, 241, 0.5),
+        rgba(236, 72, 153, 0.5),
+        rgba(16, 185, 129, 0.5),
+        rgba(99, 102, 241, 0.5));
+    background-size: 300% 300%;
+    border-radius: 12px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    animation: gradientRotate 6s ease infinite;
+}
+
+.allElems header:hover::before {
+    opacity: 1;
+}
+
+@keyframes gradientRotate {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+header .header1 h1 {
+    font-size: 80px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    /* Tighter margins */
+    /* NEW: Text gradient effect */
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+    }
+}
+
+header .header1 h2 {
+    font-size: 40px;
+    font-weight: 500;
+    /* NEW: Subtle glow */
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+header .header1 h4 {
+    font-weight: 500;
+    font-size: 40px;
+    /* NEW: Opacity animation */
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+header .header1 h4:hover {
+    opacity: 1;
+}
+
+header .header2 h2 {
+    font-weight: 700;
+    font-size: 70px;
+    /* NEW: Temperature gradient */
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 8px rgba(251, 191, 36, 0.3));
+}
+
+header .header2 h4 {
+    font-weight: 500;
+    margin-top: -10px;
+    margin-bottom: 45px;
+    font-size: 40px;
+    /* NEW: Icon-like styling */
+    position: relative;
+    padding-left: 45px;
+}
+
+/* NEW: Weather icon indicator */
+header .header2 h4::before {
+    content: '☀';
+    position: absolute;
+    left: 0;
+    font-size: 35px;
+    animation: weatherPulse 2s ease-in-out infinite;
+}
+
+@keyframes weatherPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+header .header2 h3 {
+    font-weight: 500;
+    font-size: 20px;
+    opacity: 0.8;
+    /* NEW: Smooth transitions */
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 25px;
+}
+
+header .header2 h3:hover {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+/* NEW: Info icons */
+header .header2 h3::before {
+    content: '●';
+    position: absolute;
+    left: 0;
+    color: var(--blue);
+    font-size: 12px;
+}
+
+header .header2 .precipitation::before {
+    color: var(--blue);
+}
+
+header .header2 .humidity::before {
+    color: var(--green);
+}
+
+header .header2 .wind::before {
+    color: var(--tri1);
+}
+
+.allElems .allFeatures {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* NEW: Gap for better spacing */
+    gap: 20px;
+}
+
+.elem {
+    height: 300px;
+    width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    /* NEW: Enhanced card styling */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(5px);
+    transform-style: preserve-3d;
+}
+
+/* NEW: 3D card perspective on hover */
+.elem:hover {
+    transform: translateY(-6px) rotateX(2deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(99, 102, 241, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* NEW: Shimmer effect */
+.elem::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.elem:hover::before {
+    left: 100%;
+}
+
+.elem img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.85);
+    /* NEW: Smooth image transition */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.elem:hover img {
+    transform: scale(1.05);
+    filter: brightness(1) saturate(1.2);
+}
+
+.elem h2 {
+    position: absolute;
+    bottom: 8%;
+    font-weight: 700;
+    font-size: 28px;
+    right: 8%;
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    /* NEW: Text enhancement */
+    background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.9));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+}
+
+.elem:hover h2 {
+    transform: translateY(-5px);
+    text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8),
+                 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.elem:active {
+    scale: 0.98;
+    transition: scale 0.1s ease;
+}
+
+.elem::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.1),
+            transparent);
+    /* NEW: Gradient overlay enhancement */
+    transition: all 0.3s ease;
+}
+
+.elem:hover::after {
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.2),
+            rgba(99, 102, 241, 0.1));
+}
+
+/* ===== FIXES & POLISH ===== */
+
+html,
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.fullElem {
+    height: 100%;
+    width: 100%;
+    background-color: var(--sec);
+    padding: 80px 40px 40px 40px;
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* NEW: Entry animation */
+    animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(20px);
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fullElem .back {
+    position: fixed;
+    top: 20px;
+    right: 5%;
+    background-color: var(--red);
+    border-radius: 6px;
+    padding: 12px 24px;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    z-index: 1001;
+    /* NEW: Enhanced button styling */
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+/* NEW: Button ripple effect */
+.fullElem .back::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.fullElem .back:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.fullElem .back:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.6);
+}
+
+.fullElem .back:active {
+    scale: 0.97;
+    box-shadow: 0 2px 10px rgba(239, 68, 68, 0.4);
+}
+
+.todo-list-fullpage h2 {
+    font-size: 65px;
+    /* NEW: Gradient heading */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+    animation: headingGlow 3s ease-in-out infinite;
+}
+
+@keyframes headingGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 25px rgba(118, 75, 162, 0.5));
+    }
+}
+
+.todo-list-fullpage .todo-container {
+    height: 80%;
+    width: 100%;
+    margin-top: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    /* NEW: Gap spacing */
+    gap: 30px;
+}
+
+.todo-list-fullpage .todo-container .addTask {
+    width: 33%;
+    background-color: var(--tri2);
+    height: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* NEW: Glassmorphism effect */
+    background: linear-gradient(135deg, 
+        rgba(30, 41, 59, 0.8), 
+        rgba(30, 41, 59, 0.9));
+    backdrop-filter: blur(15px);
+    box-shadow: var(--shadow-lg),
+                inset 0 0 60px rgba(255, 255, 255, 0.03);
+    transition: all 0.3s ease;
+}
+
+.todo-list-fullpage .todo-container .addTask:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl),
+                inset 0 0 80px rgba(255, 255, 255, 0.05),
+                0 0 40px rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.todo-list-fullpage .todo-container .addTask form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding: 30px;
+}
+
+.todo-container .addTask form #task-input {
+    padding: 15px 20px;
+    width: 100%;
+    font-size: 24px;
+    border-radius: 4px;
+    background-color: #f8fafc;
+    /* Professional off-white input */
+    color: var(--sec);
+    border: 1px solid #cbd5e1;
+    outline: none;
+    margin-bottom: 20px;
+    font-weight: 500;
+    /* NEW: Enhanced input styling */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.todo-container .addTask form #task-input:focus {
+    border-color: var(--tri1);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1),
+                inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
+}
+
+.todo-container .addTask form #task-input::placeholder {
+    color: rgba(15, 23, 42, 0.5);
+    transition: color 0.3s ease;
+}
+
+.todo-container .addTask form #task-input:focus::placeholder {
+    color: rgba(15, 23, 42, 0.3);
+}
+
+.todo-container .addTask form textarea {
+    padding: 15px 20px;
+    width: 100%;
+    font-size: 24px;
+    background-color: #f8fafc;
+    color: var(--sec);
+    border-radius: 4px;
+    font-weight: 500;
+    border: 1px solid #cbd5e1;
+    outline: none;
+    margin-bottom: 20px;
+    /* NEW: Enhanced textarea */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    resize: vertical;
+    min-height: 120px;
+}
+
+.todo-container .addTask form textarea:focus {
+    border-color: var(--tri1);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1),
+                inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
+}
+
+.todo-container .addTask form button {
+    padding: 15px 25px;
+    width: 100%;
+    font-size: 22px;
+    background-color: var(--tri1);
+    border-radius: 4px;
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    outline: none;
+    margin-bottom: 20px;
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    /* NEW: Enhanced button with gradient */
+    background: linear-gradient(135deg, var(--tri1), #1d4ed8);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* NEW: Button shine effect */
+.todo-container .addTask form button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent);
+    transition: left 0.5s ease;
+}
+
+.todo-container .addTask form button:hover::before {
+    left: 100%;
+}
+
+.todo-container .addTask form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+}
+
+.todo-container .addTask form button:active {
+    scale: 0.98;
+    box-shadow: 0 2px 10px rgba(37, 99, 235, 0.4);
+}
+
+.todo-list-fullpage .todo-container .allTask {
+    width: 65%;
+    background-color: var(--tri2);
+    height: 100%;
+    border-radius: 12px;
+    padding: 30px;
+    overflow: auto;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* NEW: Enhanced task list container */
+    background: linear-gradient(135deg, 
+        rgba(30, 41, 59, 0.8), 
+        rgba(30, 41, 59, 0.9));
+    backdrop-filter: blur(15px);
+    box-shadow: var(--shadow-lg),
+                inset 0 0 60px rgba(255, 255, 255, 0.03);
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.03);
+    /* Translucent rows */
+    padding: 20px 30px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* NEW: Enhanced task item */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* NEW: Task hover gradient */
+.task::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: var(--gradient-primary);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.task:hover::before {
+    transform: scaleY(1);
+}
+
+.task:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.task h5 {
+    color: var(--pri);
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* NEW: Text transition */
+    transition: all 0.3s ease;
+}
+
+.task:hover h5 {
+    color: rgba(255, 255, 255, 1);
+}
+
+.task h5 span {
+    background-color: var(--red);
+    color: var(--pri);
+    padding: 5px 12px;
+    border-radius: 4px;
+    /* Tag-like sharp corners */
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* NEW: Badge animation */
+    animation: badgePulse 2s ease-in-out infinite;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+}
+
+@keyframes badgePulse {
+    0%, 100% {
+        box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.6);
+    }
+}
+
+.task button {
+    padding: 12px 24px;
+    color: var(--pri);
+    background-color: var(--green);
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* NEW: Enhanced button */
+    background: linear-gradient(135deg, var(--green), #059669);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.task button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.5);
+}
+
+.task button:active {
+    scale: 0.96;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.mark-imp {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    width: 100%;
+    gap: 15px;
+}
+
+.mark-imp input {
+    scale: 1.4;
+    /* NEW: Custom checkbox styling */
+    cursor: pointer;
+    accent-color: var(--red);
+}
+
+.mark-imp label {
+    font-size: 18px;
+    font-weight: 500;
+    /* NEW: Label styling */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.mark-imp:hover label {
+    color: rgba(255, 255, 255, 1);
+}
+
+.daily-planner-fullpage h2 {
+    font-size: 65px;
+    /* NEW: Gradient text */
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 4px 20px rgba(79, 172, 254, 0.3));
+}
+
+.daily-planner-fullpage .day-planner {
+    margin-top: 30px;
+    height: 80%;
+    overflow: auto;
+    /* NEW: Enhanced planner container */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.day-planner-time {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    margin-bottom: 20px;
+    /* NEW: Enhanced time slot */
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.day-planner-time:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-left-color: var(--blue);
+    transform: translateX(5px);
+}
+
+.day-planner-time p {
+    font-size: 30px;
+    font-weight: 700;
+    width: 300px;
+    /* NEW: Time label styling */
+    background: linear-gradient(135deg, var(--blue), var(--tri1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.day-planner-time input {
+    padding: 20px 45px;
+    width: 100%;
+    background-color: var(--sec);
+    border-radius: 5px;
+    border: none;
+    font-size: 35px;
+    padding-top: 34px;
+    outline: none;
+    /* NEW: Enhanced input */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    color: var(--pri);
+}
+
+.day-planner-time input:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    transform: translateY(-2px);
+}
+
+.day-planner-time input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* motivational */
+.motivation-fullPage-container {
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.motivational-fullpage .motivation-container {
+    height: 600px;
+    width: 80%;
+    border-radius: 50px;
+    position: relative;
+    /* NEW: Container animation */
+    animation: containerFloat 6s ease-in-out infinite;
+}
+
+@keyframes containerFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.motivational-fullpage .motivation-container::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: var(--tri1);
+    border-radius: 50px;
+    scale: 1.15;
+    -webkit-filter: blur(100px);
+    filter: blur(100px);
+    z-index: 8;
+    /* NEW: Animated glow */
+    animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        opacity: 0.6;
+        scale: 1.15;
+    }
+    50% {
+        opacity: 0.8;
+        scale: 1.2;
+    }
+}
+
+.motivational-fullpage .motivation-container .motivation-wrapper {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    background-color: var(--tri1);
+    padding: 20px;
+    border-radius: 30px;
+    border: 6px solid var(--tri2);
+    /* NEW: Enhanced wrapper */
+    background: linear-gradient(135deg, var(--tri1), #1d4ed8);
+    box-shadow: var(--shadow-xl),
+                inset 0 0 80px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+}
+
+.motivation-1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+.motivation-1 h2 {
+    background-color: var(--tri2);
+    padding: 30px;
+    border-radius: 20px;
+    font-size: 40px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-weight: 500;
+    text-align: right;
+    /* NEW: Enhanced badge */
+    background: linear-gradient(135deg, var(--tri2), #0f172a);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.motivation-1 h2:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+.motivation-2 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 30px;
+    /* NEW: Quote container enhancement */
+    position: relative;
+}
+
+.motivation-2::before,
+.motivation-2::after {
+    content: '"';
+    position: absolute;
+    font-size: 120px;
+    font-weight: 700;
+    opacity: 0.1;
+    color: var(--sec);
+    font-family: Georgia, serif;
+}
+
+.motivation-2::before {
+    top: -20px;
+    left: 0;
+}
+
+.motivation-2::after {
+    bottom: -60px;
+    right: 20px;
+}
+
+.motivation-2 h1 {
+    font-size: 65px;
+    font-weight: 700;
+    color: var(--sec);
+    /* NEW: Animated quote text */
+    animation: quoteReveal 1s ease-out;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    line-height: 1.2;
+}
+
+@keyframes quoteReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.motivation-3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    /* NEW: Gap for button */
+    gap: 20px;
+}
+
+.motivation-3 h2 {
+    background-color: var(--tri2);
+    padding: 30px;
+    border-radius: 20px;
+    font-size: 40px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-weight: 500;
+    text-align: right;
+    /* NEW: Author badge styling */
+    background: linear-gradient(135deg, var(--tri2), #0f172a);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    font-style: italic;
+}
+
+.motivation-3 h2:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* NEW: Enhanced quote button */
+#new-quote-btn {
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 25px;
+    border: none;
+    background: linear-gradient(135deg, #f5d76e, #ffb703);
+    font-weight: bold;
+    font-size: 18px;
+    color: #000;
+    box-shadow: 0 4px 15px rgba(255, 183, 3, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#new-quote-btn::before {
+    content: '✨';
+    position: absolute;
+    left: 15px;
+    transition: transform 0.3s ease;
+}
+
+#new-quote-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 183, 3, 0.6);
+}
+
+#new-quote-btn:hover::before {
+    transform: rotate(180deg);
+}
+
+#new-quote-btn:active {
+    transform: scale(0.95);
+}
+
+.motivational-fullpage .motivation-container .motivation-wrapper img {
+    position: absolute;
+    right: 5%;
+    opacity: 0.2;
+    top: 5%;
+    height: 120px;
+    /* NEW: Subtle rotation animation */
+    animation: iconRotate 20s linear infinite;
+}
+
+@keyframes iconRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.pomodoro-fullpage h2 {
+    font-size: 50px;
+    /* NEW: Gradient heading */
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 4px 20px rgba(250, 112, 154, 0.3));
+}
+
+.pomodoro-fullpage .pomo-timer {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /* NEW: Timer container enhancement */
+    padding: 60px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 40px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+                inset 0 0 80px rgba(255, 255, 255, 0.03);
+}
+
+.pomo-timer h1 {
+    font-size: 170px;
+    /* NEW: Digital clock effect */
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.3));
+    letter-spacing: 0.05em;
+}
+
+.pomo-timer button {
+    background-color: var(--tri2);
+    padding: 15px 40px;
+    font-size: 32px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    -webkit-box-shadow: 7px 7px 0px var(--black);
+    box-shadow: 7px 7px 0px var(--black);
+    -webkit-transition: all ease 0.1s;
+    -o-transition: all ease 0.1s;
+    transition: all ease 0.1s;
+    font-weight: 700;
+    /* NEW: Enhanced buttons */
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* NEW: Button background animation */
+.pomo-timer button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.pomo-timer button:hover::before {
+    left: 100%;
+}
+
+.pomo-timer button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 9px 9px 0px var(--black);
+}
+
+.pomo-timer button:active {
+    -webkit-box-shadow: 0px 0px 0px var(--black);
+    box-shadow: 0px 0px 0px var(--black);
+    transform: translate(7px, 7px);
+}
+
+/* NEW: Individual button colors */
+.pomo-timer .start-timer {
+    background: linear-gradient(135deg, var(--green), #059669);
+}
+
+.pomo-timer .pause-timer {
+    background: linear-gradient(135deg, var(--blue), #1d4ed8);
+}
+
+.pomo-timer .reset-timer {
+    background: linear-gradient(135deg, var(--red), #dc2626);
+}
+
+.pomodoro-fullpage .session {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    background-color: var(--green);
+    padding: 15px 30px;
+    font-size: 30px;
+    border-radius: 5px;
+    /* NEW: Enhanced session badge */
+    background: linear-gradient(135deg, var(--green), #059669);
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+    animation: sessionPulse 2s ease-in-out infinite;
+}
+
+@keyframes sessionPulse {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+    }
+    50% {
+        box-shadow: 0 6px 30px rgba(16, 185, 129, 0.6);
+    }
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    height: 60px;
+    width: 100%;
+    margin-bottom: 35px;
+    padding: 30px 40px;
+    /* NEW: Nav backdrop */
+    backdrop-filter: blur(20px);
+}
+
+.nav-in {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: var(--tri2);
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 20px 30px;
+    border-radius: 10px;
+    /* NEW: Enhanced navigation */
+    background: linear-gradient(135deg, 
+        rgba(30, 41, 59, 0.9), 
+        rgba(30, 41, 59, 0.95));
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2),
+                inset 0 0 40px rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-in h2 {
+    font-size: 30px;
+    font-weight: 700;
+    /* NEW: Logo text gradient */
+    background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.theme {
+    background-color: var(--pri);
+    padding: 12px 20px;
+    border-radius: 10px;
+    -webkit-transition: all ease 0.2s;
+    -o-transition: all ease 0.2s;
+    transition: all ease 0.2s;
+    cursor: pointer;
+    /* NEW: Enhanced theme button */
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+/* NEW: Theme button icon */
+.theme::before {
+    content: '🎨';
+    position: absolute;
+    left: -30px;
+    font-size: 20px;
+    transition: left 0.3s ease;
+}
+
+.theme:hover::before {
+    left: 10px;
+}
+
+.theme:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    padding-left: 45px;
+}
+
+.theme h4 {
+    color: var(--sec);
+    font-weight: 700;
+    font-size: 20px;
+    pointer-events: none;
+    /* NEW: Text transition */
+    transition: all 0.3s ease;
+}
+
+.theme:active {
+    scale: 0.96;
+}
+
+.goals-page {
+    background: linear-gradient(135deg, var(--sec), #1e1e1e);
+    min-height: 100vh;
+    position: relative;
+    padding: 40px;
+    /* NEW: Animated background */
+    background: linear-gradient(135deg, 
+        var(--sec), 
+        #1e1e1e,
+        var(--sec));
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* HEADINGS */
+.goals-page h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    /* NEW: Gradient heading */
+    background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 10px rgba(255, 255, 255, 0.2));
+}
+
+/* LEFT PANEL – ADD GOALS */
+.goals-page .goals-container {
+    height: 460px;
+    width: 480px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px);
+    position: absolute;
+    top: 15%;
+    left: 4%;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    /* NEW: Enhanced glassmorphism */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.goals-page .goals-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
+                inset 0 0 60px rgba(255, 255, 255, 0.05);
+}
+
+.goals-container h3 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+    /* NEW: Subtitle gradient */
+    background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.9));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* TEXTAREA */
+.goals-container textarea {
+    width: 100%;
+    height: 200px;
+    border-radius: 18px;
+    border: none;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 20px;
+    font-size: 16px;
+    color: #fff;
+    resize: none;
+    outline: none;
+    /* NEW: Enhanced textarea */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.goals-container textarea:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1),
+                inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.goals-container textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    /* NEW: Placeholder animation */
+    transition: color 0.3s ease;
+}
+
+.goals-container textarea:focus::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ADD BUTTON */
+.goals-container button {
+    margin-top: 25px;
+    padding: 18px 50px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    background: linear-gradient(135deg, #f5d76e, #ffb703);
+    color: #000;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* NEW: Enhanced button */
+    box-shadow: 0 4px 15px rgba(255, 183, 3, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+/* NEW: Button shine */
+.goals-container button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.goals-container button:hover::before {
+    left: 100%;
+}
+
+.goals-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 183, 3, 0.4);
+}
+
+.goals-container button:active {
+    transform: scale(0.95);
+}
+
+/* RIGHT PANEL – GOALS LIST */
+.goals-list {
+    height: 460px;
+    width: 560px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px);
+    position: absolute;
+    top: 15%;
+    right: 4%;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    overflow-y: auto;
+    /* NEW: Enhanced list container */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.goals-list:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
+                inset 0 0 60px rgba(255, 255, 255, 0.05);
+}
+
+.goals-list h2 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+/* GOAL ITEM */
+.goal-item {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 16px 20px;
+    border-radius: 18px;
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    /* NEW: Enhanced goal items */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* NEW: Goal item accent */
+.goal-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(135deg, #f5d76e, #ffb703);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.goal-item:hover::before {
+    transform: scaleY(1);
+}
+
+.goal-item:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* GOAL TEXT */
+.goal-item span {
+    font-size: 16px;
+    color: #fff;
+    max-width: 70%;
+    /* NEW: Text styling */
+    transition: color 0.3s ease;
+}
+
+.goal-item:hover span {
+    color: rgba(255, 255, 255, 1);
+}
+
+/* COMPLETE BUTTON */
+.complete-btn {
+    padding: 10px 18px;
+    border-radius: 30px;
+    border: none;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    /* NEW: Enhanced complete button */
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.complete-btn:hover {
+    background: var(--sec);
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* COMPLETED STATE */
+.goal-item.completed {
+    opacity: 0.5;
+    text-decoration: line-through;
+    /* NEW: Completed animation */
+    animation: completeFade 0.5s ease;
+}
+
+@keyframes completeFade {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+}
+
+.goal-item.completed .complete-btn {
+    background: gray;
+    cursor: default;
+    /* NEW: Disabled state */
+    box-shadow: none;
+}
+
+/* NEW: Loading Spinner (for future use) */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid var(--pri);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+/* NEW: Fade-in animation for page load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* NEW: Ripple effect utility class */
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.ripple:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* NEW: Smooth transitions for all interactive elements */
+button, input, textarea, select, a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* NEW: Focus visible for accessibility */
+*:focus-visible {
+    outline: 2px solid var(--tri1);
+    outline-offset: 2px;
+}
+
+/* NEW: Improved accessibility for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
